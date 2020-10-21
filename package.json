@@ -1,0 +1,18 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "A bot that tells stories about Tom.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Myron",
+  "license": "ISC",
+  "dependencies": {
+    "date-and-time": "^0.14.1",
+    "discord.js": "^12.3.1",
+    "mongoose": "^5.10.9",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {}
+}
