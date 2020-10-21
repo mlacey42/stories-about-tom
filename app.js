@@ -1,10 +1,9 @@
 // Bot Invite Link: https://discord.com/oauth2/authorize?client_id=766188243803832352&scope=bot&permissions=392256
 // Imports
-const config = require('./config');
 const Discord = require('discord.js');
 const fs = require('fs');
 const mongoose = require('mongoose');
-mongoose.connect(config.db.connection, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.connection, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Initialization
 const prefix = '!'

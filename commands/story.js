@@ -1,4 +1,3 @@
-const config = require('../config');
 const date = require('date-and-time');
 const fetch = require('node-fetch');
 const Count = require('../models/count');
@@ -23,7 +22,7 @@ module.exports = {
             body: JSON.stringify(json),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${config.inferkit.key}`
+                'Authorization': `Bearer ${process.env.inferkit_key}`
             }
         })
         .then(response => response.json());
@@ -36,13 +35,13 @@ module.exports = {
                         totalCount: 0
                     });
                 } else {
-                    Count.findById(config.db.countId)
+                    Count.findById(process.env.countId)
                     .exec((err, count) => {
                         if(err) {
                             console.log(err);
                         } else {
                             entryNum = count.totalCount + 1;
-                            Count.findByIdAndUpdate(config.db.countId, { totalCount : entryNum}, 
+                            Count.findByIdAndUpdate(process.env.countId, { totalCount : entryNum}, 
                             (err, count) => {
                                 if(err) {
                                     console.log(err);
